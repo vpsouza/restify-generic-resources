@@ -1,15 +1,15 @@
 /**
  * Generate a generic C.R.U.D. api using restify and sequelize-multi-tenancy
- * @param {server} restify server
+ * @param {server} restifyServer
  * @param {string} modelName
- * @param {models} sequelize
- * @param {logger} bunnyan
+ * @param {models} multiTenancySequelize
+ * @param {logger} bunnyanLogger
  * @return {object}
  */
 module.exports = (function() {
     'use strict';
     
-      const validating = require('./lib/validating'),
+      const validating = require('restify-sequelize-validation'),
             getModelById = require('./lib/get-model-by-id'),
             createModel = require('./lib/create-model'),
             updateModel = require('./lib/update-model'),

@@ -1,6 +1,6 @@
 {
   "name": "restify-generic-resources",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "mocha": "^3.2.0"
   },
   "dependencies": {
-    "restify": "^4.3.0"
+    "restify": "^4.3.0",
+    "restify-sequelize-validation": "0.0.1"
   }
 }
