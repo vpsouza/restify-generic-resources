@@ -1,0 +1,29 @@
+{
+  "name": "restify-generic-resources",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpsouza/restify-generic-resources.git"
+  },
+  "author": "Vinicius Piedade de Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vpsouza/restify-generic-resources/issues"
+  },
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "homepage": "https://github.com/vpsouza/restify-generic-resources#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "restify": "^4.3.0"
+  }
+}
