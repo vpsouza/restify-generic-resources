@@ -14,7 +14,7 @@ const genericResources = require('restify-generic-resources');
 genericResources.setupAPI(server, '<sequelize-model-name>', <sequelize-models>);
 ```
     
-## Usage  
+## Response  
 Library should create C.R.U.D endpoints:
 
 ```
