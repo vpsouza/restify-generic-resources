@@ -14,6 +14,9 @@ module.exports = (function() {
             initDB = require('./lib/init-db');
 
         return {
+            services: {
+                initDb: require('./lib/services/init-db')
+            },
             getModelById: getModelById,
             listAllModels: listAllModels,
             createModel: createModel,
