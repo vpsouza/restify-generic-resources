@@ -1,20 +1,30 @@
-Number Formatter
+Generic Resources for Restify
 =========
 
-A small library that adds commas to numbers
+A small library that adds C.R.U.D. operations to Restify WebServers using SequelizeJS ORM.
 
 ## Installation
 
-  `npm install @jdaudier/number-formatter`
+  `npm install restify-generic-resources`
 
 ## Usage
 
-    var numFormatter = require('@jdaudier/number-formatter');
+```
+const genericResources = require('restify-generic-resources');
+genericResources.setupAPI(server, '<sequelize-model-name>', <sequelize-models>);
+```
+    
+## Response  
+Library should create C.R.U.D endpoints:
 
-    var formattedNum = numFormatter(35666);
-  
-  
-  Output should be `35,666`
+```
+GET   /<modelName>/:id    //GET_BY_ID
+PUT   /<modelName>        //CREATE
+POST  /<modelName>        //UPDATE
+GET   /<modelName>        //LIST-ALL
+POST  /<modelName>        //LIST-ALL WITH FILTER
+DEL   /<modelName>/:id    //DELETE
+```
 
 
 ## Tests

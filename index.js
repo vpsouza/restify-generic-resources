@@ -1,9 +1,12 @@
 /**
  * Generate a generic C.R.U.D. api using restify and sequelize-multi-tenancy
+<<<<<<< HEAD
  * @param {server} restifyServer
  * @param {string} modelName
  * @param {models} multiTenancySequelize
  * @param {logger} bunnyanLogger
+=======
+>>>>>>> 3dc94feddaad1646bafa18889abcdc5a57c66ed3
  * @return {object}
  */
 module.exports = (function() {
@@ -18,6 +21,9 @@ module.exports = (function() {
             initDB = require('./lib/init-db');
 
         return {
+            services: {
+                initDb: require('./lib/services/init-db')
+            },
             getModelById: getModelById,
             listAllModels: listAllModels,
             createModel: createModel,
