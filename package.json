@@ -1,10 +1,6 @@
 {
   "name": "restify-generic-resources",
-<<<<<<< HEAD
-  "version": "0.0.4",
-=======
-  "version": "0.1.1",
->>>>>>> 3dc94feddaad1646bafa18889abcdc5a57c66ed3
+  "version": "0.1.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,10 +25,6 @@
   },
   "dependencies": {
     "restify": "^4.3.0",
-<<<<<<< HEAD
-    "restify-sequelize-validation": "0.0.1"
-=======
     "restify-sequelize-validation": "^0.0.4"
->>>>>>> 3dc94feddaad1646bafa18889abcdc5a57c66ed3
   }
 }
