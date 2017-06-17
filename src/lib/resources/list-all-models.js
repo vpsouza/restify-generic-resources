@@ -1,7 +1,7 @@
 'use strict';
 
 import restify from 'restify';
-import {resolveSuccess, resolveError, getTenant} from './utils';
+import {resolveSuccess, resolveError, getTenant} from '../utils';
 import {listAll} from '../services';
 
 export default (server, modelName, models, logger) =>

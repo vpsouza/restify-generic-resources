@@ -1,7 +1,7 @@
 'use strict';
 
 import restify from 'restify';
-import {resolveSuccess, resolveError, getTenant} from './utils';
+import {resolveSuccess, resolveError, getTenant} from '../utils';
 import {getModelById, deleteModel} from '../services';
 
 export default (appAuthSecret, server, modelName, models, logger) => 
