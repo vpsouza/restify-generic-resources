@@ -9,7 +9,7 @@ var _restify = require('restify');
 
 var _restify2 = _interopRequireDefault(_restify);
 
-var _utils = require('./utils');
+var _utils = require('../utils');
 
 var _services = require('../services');
 
