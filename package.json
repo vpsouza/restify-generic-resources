@@ -1,6 +1,6 @@
 {
   "name": "restify-generic-resources",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "url": "https://github.com/vpsouza/restify-generic-resources/issues"
   },
   "engines": {
-    "node": ">=4.2.4"
+    "node": ">=6.11.0"
   },
   "homepage": "https://github.com/vpsouza/restify-generic-resources#readme",
   "devDependencies": {
