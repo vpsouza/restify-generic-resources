@@ -14,9 +14,9 @@ var _services = require('../services');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (server, modelName, models, logger) {
+exports.default = function (appAuthSecret, server, modelName, models, logger) {
     return function (req, res) {
-        return [(0, _easyutils.getTenant)(process.env.AUTH_SECRET), (0, _services.listAll)(server, modelName, models)].reduce(function (chain, task) {
+        return [(0, _easyutils.getTenant)(appAuthSecret), (0, _services.listAll)(server, modelName, models)].reduce(function (chain, task) {
             return chain.then(task);
         }, Promise.resolve([req.params.jwt, req.body])).then(function (result) {
             return (0, _easyutils.resolveSuccess)(res, result);
