@@ -22,12 +22,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var setupAPI = function setupAPI(appAuthSecret, server, modelName, models, logger) {
-    server.get(modelName + '/:id', resources.getModelById(server, modelName, models, logger));
-    server.put(modelName, (0, _restifySequelizeValidation2.default)(server, modelName, models), resources.createModel(server, modelName, models, logger));
-    server.post(modelName, (0, _restifySequelizeValidation2.default)(server, modelName, models), resources.updateModel(server, modelName, models, logger));
-    server.get(modelName, resources.listAll(server, modelName, models, logger));
-    server.post(modelName, resources.listAll(server, modelName, models, logger));
-    server.del(modelName + '/:id', resources.deleteModel(server, modelName, models, logger));
+    server.get(modelName + '/:id', resources.getModelById(appAuthSecret, server, modelName, models, logger));
+    server.put(modelName, (0, _restifySequelizeValidation2.default)(server, modelName, models), resources.createModel(appAuthSecret, server, modelName, models, logger));
+    server.post(modelName, (0, _restifySequelizeValidation2.default)(server, modelName, models), resources.updateModel(appAuthSecret, server, modelName, models, logger));
+    server.get(modelName, resources.listAll(appAuthSecret, server, modelName, models, logger));
+    server.post(modelName, resources.listAll(appAuthSecret, server, modelName, models, logger));
+    server.del(modelName + '/:id', resources.deleteModel(appAuthSecret, server, modelName, models, logger));
 };
 
 exports.services = services;
