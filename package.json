@@ -1,6 +1,6 @@
 {
   "name": "restify-generic-resources",
-  "version": "0.2.12",
+  "version": "0.2.14",
   "description": "",
   "main": "dist/index.js",
   "scripts": {

@@ -8,6 +8,31 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
 var _easyutils = require('easyutils');
 
+var normalizeWhereClause = function normalizeWhereClause(whereClauseParam, modelInstance) {
+    if (whereClauseParam) {
+        if (whereClauseParam['where']) {
+            return {
+                where: whereClauseParam['where'],
+                include: (0, _easyutils.getIncludedModels)(null, modelInstance)
+            };
+        } else {
+            var whereClause = {
+                "$or": []
+            };
+            for (var prop in modelInstance) {
+                var clause = {};
+                clause[prop] = { "$like": "%" + modelInstance[prop] + "%" };
+                whereClause["$or"].push(clause);
+            }
+            return whereClause;
+        }
+    } else {
+        return {
+            include: (0, _easyutils.getIncludedModels)(null, modelInstance)
+        };
+    }
+};
+
 exports.default = function (server, modelName, models) {
     return function () {
         var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : data,
@@ -16,8 +41,6 @@ exports.default = function (server, modelName, models) {
             modelBody = _ref2[1];
 
         var sequelizeModelInstance = (0, _easyutils.getModelInstance)(models(server, tenantID), modelName);
-        return sequelizeModelInstance.create(modelBody, {
-            include: (0, _easyutils.getIncludedModels)(modelBody, sequelizeModelInstance)
-        });
+        return sequelizeModelInstance.findAll(normalizeWhereClause(modelBody || null, sequelizeModelInstance));
     };
 };
