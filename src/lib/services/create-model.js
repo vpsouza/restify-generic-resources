@@ -1,6 +1,6 @@
 'use strict';
 
-import {getIncludedModels, getModelInstance} from '../utils';
+import {getIncludedModels, getModelInstance} from 'easyutils';
 
 export default (server, modelName, models) => ([tenantID, modelBody] = data) => {
     let sequelizeModelInstance = getModelInstance(models(server, tenantID), modelName);

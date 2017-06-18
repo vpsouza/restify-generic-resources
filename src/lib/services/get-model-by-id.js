@@ -1,6 +1,6 @@
 
 'use strict';
-import {getModelInstance} from '../utils';
+import {getModelInstance} from 'easyutils';
     
 export default (server, modelName, models) => 
     ([tenantID, id, ...opts] = data) => 

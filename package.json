@@ -1,11 +1,11 @@
 {
   "name": "restify-generic-resources",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
-    "compile": "babel src --out-dir dist"
+    "compile": "babel src --out-dir dist --ignore spec.js,test.js --copy-files"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "jest": "^20.0.4"
   },
   "dependencies": {
-    "jsonwebtoken": "^7.4.0",
+    "easyutils": "0.0.1",
     "restify": "^4.3.0",
     "restify-sequelize-validation": "^0.0.4"
   }
