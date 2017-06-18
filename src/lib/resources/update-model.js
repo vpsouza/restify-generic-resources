@@ -1,5 +1,5 @@
 import restify from 'restify';
-import {resolveSuccess, resolveError, getTenant} from '../utils';
+import {resolveSuccess, resolveError, getTenant} from 'easyutils';
 import {getModelById, updateModel, updateModelIncluded} from '../services';
 
 export default (appAuthSecret, server, modelName, models, logger) => (req, res) => {

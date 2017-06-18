@@ -2,7 +2,7 @@
 'use strict';
 
 import restify from 'restify';
-import {resolveSuccess, resolveError, getTenant} from '../utils';
+import {resolveSuccess, resolveError, getTenant} from 'easyutils';
 import {createModel} from '../services';
 
 export default (appAuthSecret, server, modelName, models, logger) => 
