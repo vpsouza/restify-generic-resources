@@ -14,7 +14,7 @@ export default (appAuthSecret, server, modelName, models, logger) =>
             ]
             .reduce((chain, task) => chain.then(task), Promise.resolve([req.params.jwt, req.params.id]))
             .then((result) => resolveSuccess(res, result))
-            .catch((err) => resolveError(res, new restify.InternalServerError(err.message), logger));
+            .catch((err) => resolveError(res, new restify.InternalServerError(err), logger));
         } else {
             resolveError(res, new restify.BadRequestError('Invalid Request Body'), null);
         }

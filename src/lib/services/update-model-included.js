@@ -3,7 +3,7 @@ import {getIncludedModels} from 'easyutils';
 
 export default ([modelBody, modelInstance, ...opt] = data) => 
     Promise.all(
-        modelUtils.getIncludedModels(modelBody, modelInstance, true)
+        getIncludedModels(modelBody, modelInstance, true)
         .filter(elm => modelBody[elm.relName])
         .reduce((includedModel, total) => {
             if(Array.isArray(modelBody[includedModel.relName])){

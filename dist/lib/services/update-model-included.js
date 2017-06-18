@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _utils = require('../utils');
+var _easyutils = require('easyutils');
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -17,7 +17,7 @@ exports.default = function () {
         modelInstance = _ref2[1],
         opt = _ref2.slice(2);
 
-    return Promise.all(modelUtils.getIncludedModels(modelBody, modelInstance, true).filter(function (elm) {
+    return Promise.all((0, _easyutils.getIncludedModels)(modelBody, modelInstance, true).filter(function (elm) {
         return modelBody[elm.relName];
     }).reduce(function (includedModel, total) {
         if (Array.isArray(modelBody[includedModel.relName])) {
@@ -32,17 +32,3 @@ exports.default = function () {
         return Promise.resolve([].concat(_toConsumableArray(opt), [data]));
     });
 };
-
-/*let toBeUpdated = [];
-modelUtils.getIncludedModels(modelBody, modelInstance, true)
-    
-    .forEach(includedModel => {
-        if(Array.isArray(modelBody[includedModel.relName])){
-            Array.prototype.push.apply(toBeUpdated, modelBody[includedModel.relName].map(function(elm){
-                return includedModel.target.build(elm);
-            }));
-        } else {
-            toBeUpdated.push(includedModel.target.build(modelBody[includedModel.relName]));
-        }
-    });
-return Promise.all(toBeUpdated.map(elm => elm.save())).then(data => Promise.resolve([...opt, data]));*/
