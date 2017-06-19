@@ -12,8 +12,7 @@ var normalizeWhereClause = function normalizeWhereClause(whereClauseParam, model
     if (whereClauseParam) {
         if (whereClauseParam['where']) {
             return {
-                where: whereClauseParam['where'],
-                include: (0, _easyutils.getIncludedModels)(null, modelInstance)
+                where: whereClauseParam['where']
             };
         } else {
             var whereClause = {
@@ -27,9 +26,7 @@ var normalizeWhereClause = function normalizeWhereClause(whereClauseParam, model
             return whereClause;
         }
     } else {
-        return {
-            include: (0, _easyutils.getIncludedModels)(null, modelInstance)
-        };
+        return null;
     }
 };
 
