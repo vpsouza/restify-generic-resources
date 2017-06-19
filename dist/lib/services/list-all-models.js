@@ -38,6 +38,7 @@ exports.default = function (server, modelName, models) {
             modelBody = _ref2[1];
 
         var sequelizeModelInstance = (0, _easyutils.getModelInstance)(models(server, tenantID), modelName);
-        return sequelizeModelInstance.findAll(normalizeWhereClause(modelBody || null, sequelizeModelInstance));
+        var whereClause = normalizeWhereClause(modelBody || null, sequelizeModelInstance);
+        return whereClause ? sequelizeModelInstance.findAll(whereClause) : sequelizeModelInstance.findAll();
     };
 };

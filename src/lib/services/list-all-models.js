@@ -26,5 +26,6 @@ const normalizeWhereClause = (whereClauseParam, modelInstance) => {
 
 export default (server, modelName, models) => ([tenantID, modelBody] = data) => {
     let sequelizeModelInstance = getModelInstance(models(server, tenantID), modelName);
-    return sequelizeModelInstance.findAll(normalizeWhereClause(modelBody || null, sequelizeModelInstance ));
+	let whereClause = normalizeWhereClause(modelBody || null, sequelizeModelInstance );
+    return whereClause ? sequelizeModelInstance.findAll(whereClause) : sequelizeModelInstance.findAll();
 };
