@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.updateModelIncluded = exports.updateModel = exports.listAll = exports.getModelById = exports.deleteModel = exports.createModel = undefined;
+exports.initDB = exports.updateModelIncluded = exports.updateModel = exports.listAll = exports.getModelById = exports.deleteModel = exports.createModel = undefined;
 
 var _createModel = require('./create-model');
 
@@ -33,6 +33,10 @@ var _updateModelIncluded = require('./update-model-included');
 
 var _updateModelIncluded2 = _interopRequireDefault(_updateModelIncluded);
 
+var _initDB = require('./initDB');
+
+var _initDB2 = _interopRequireDefault(_initDB);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.createModel = _createModel2.default;
@@ -41,3 +45,4 @@ exports.getModelById = _getModelById2.default;
 exports.listAll = _listAllModels2.default;
 exports.updateModel = _updateModel2.default;
 exports.updateModelIncluded = _updateModelIncluded2.default;
+exports.initDB = _initDB2.default;
