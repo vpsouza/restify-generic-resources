@@ -6,8 +6,7 @@ const normalizeWhereClause = (whereClauseParam, modelInstance) => {
     if(whereClauseParam){
         if(whereClauseParam['where']){
             return {
-                where: whereClauseParam['where'],
-                include: getIncludedModels(null, modelInstance)
+                where: whereClauseParam['where']
             };
         } else {
             let whereClause = {
@@ -21,9 +20,7 @@ const normalizeWhereClause = (whereClauseParam, modelInstance) => {
             return whereClause;
         }
     } else {
-        return {
-            include: getIncludedModels(null, modelInstance)
-        };
+        return null;
     }
 };
 
